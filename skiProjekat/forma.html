@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NARUČIVANJE HRANE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div >
+         <a href="https://wolt.com/sr/srb"><img src="img/reklama.png" id="reklama" alt="glovo"></a> 
+        </div>
+      </header>
+      <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="bioskop.html">BIOSKOP</a></li>
+            <li><a href="forma.html">NARUČI HRANU</a></li>
+            <li><a href="puzle.html">PUZLE</a></li>
+        </ul>
+    </nav>
+
+    <div id="div-forma">
+        <form action="" id="myForm" method="post">
+            <div class="form-deo">
+                <label for="ime">Ime:</label><br>
+                <input type="text" id="ime" name="ime" class="prviInput" placeholder="Pera"/>
+                <span id="greskaIme">Ime nije u dobrom formatu</span>
+            </div>
+            <div class="form-deo">
+                <label for="prezime">Prezime:</label><br>
+                <input type="text" id="prezime" name="prezime" class="prviInput" placeholder="Peric"/>
+                <span id="greskaPrezime">Prezime nije u dobrom formatu</span>
+            </div>
+            <div class="form-deo">
+                <label for="adresa">Adresa:</label><br>
+                <input type="text" id="adresa" name="adresa" class="prviInput"/>
+                <span id="greskaAdresa">Adresa nije u dobrom formatu</span>
+            </div>
+            <div class="form-deo">
+                <label for="broj">Broj telefona:</label><br>
+                <input type="text" id="broj" name="brTel" class="prviInput" value="06"/>
+                <span id="greskaBroj">Broj telefona nije u dobrom formatu</span>
+            </div>
+
+            <div class="radio-buttons">
+                <div class="hrana-deo">
+                    <label for="pljeskavica">Pljeskavica</label>
+                    <input type="radio" name="hrana" id="pljeskavica" class="radioHrana"/>
+                </div>
+                
+                <div class="hrana-deo">
+                    <label for="sendvic">Sendvic</label>
+                    <input type="radio" name="hrana" id="sendvic" class="radioHrana"/>
+                </div>
+    
+                <div class="hrana-deo">
+                    <label for="giros">Giros</label>
+                    <input type="radio" name="hrana" id="giros" class="radioHrana"/>
+                </div>
+
+                <span id="radioButtonGreska">Morate izabrati jedan</span>
+            </div>
+            
+            <div class="check-boxovi">
+                <div class="chHrana mg">
+                    <label for="kupus">Kupus</label>
+                    <input type="checkbox" name="hrana" id="kupus"/>
+                </div>
+    
+                <div class="chHrana">
+                    <label for="pavlaka">Pavlaka</label>
+                    <input type="checkbox" name="hrana" id="pavlaka"/>
+                </div>
+    
+                <div class="chHrana">
+                    <label for="kecap">Kecap</label>
+                    <input type="checkbox" name="hrana" id="kecap"/>
+                </div>
+            </div>
+                
+            <div class="form-deo">
+                <input type="button" value="posalji" id="dugme"/>
+                <span id="dugmeSuccess">Podaci su poslati</span>
+            </div>
+        </form>
+    </div>
+    <script src="script.js" type="text/javascript"></script>
+</body>
+</html>

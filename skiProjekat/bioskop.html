@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOSKOP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div >
+         <a href="https://wolt.com/sr/srb"><img src="img/reklama.png" id="reklama" alt="glovo"></a> 
+        </div>
+      </header>
+      <nav>
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="bioskop.html">BIOSKOP</a></li>
+            <li><a href="forma.html">NARUČI HRANU</a></li>
+            <li><a href="puzle.html">PUZLE</a></li>
+        </ul>
+    </nav>
+    <select id="video-select" onchange="changeVideo()">
+        <option value="img/1.mp4">Macka video smesan</option>
+        <option value="img/2.mp4">Jelen video broj jedan</option>
+        <option value="img/3.mp4">Jelen video broj dva</option>
+      </select>
+    <video id="video" src="img/1.mp4"></video>
+    <div class="controls">
+    <button id="play-button" onclick="playPause()">Play</button>
+    <input type="range" id="time-slider" min="0" max="100" oninput="updateTime()" value="0">
+    <button id="fullscreen-button" onclick="toggleFullScreen()">Fullscreen</button>
+    <br>
+    </div>
+    
+    <script>
+      var video = document.getElementById("video");
+      var fullscreenButton = document.getElementById("fullscreen-button");
+      var playButton = document.getElementById("play-button");
+      var timeSlider = document.getElementById("time-slider");
+      var videoSelect = document.getElementById("video-select");
+
+      function toggleFullScreen() {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } 
+      }
+
+      function playPause() {
+        if (video.paused) {
+          video.play();
+          playButton.innerHTML = "Pause";
+        } else {
+          video.pause();
+          playButton.innerHTML = "Play";
+        }
+      }
+
+
+      video.addEventListener("timeupdate", function() {
+        var value = (100 / video.duration) * video.currentTime;
+        timeSlider.value = value;
+      });
+
+      function updateTime() {
+        video.currentTime = (timeSlider.value * video.duration) / 100;
+      }
+
+      function changeVideo() {
+        video.src = videoSelect.value;
+        video.load();
+        video.play();
+        playButton.innerHTML="Pause";
+      }
+    </script>
+</body>
+</html>

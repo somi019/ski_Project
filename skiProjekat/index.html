@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>HOME</title>
+  </head>
+  <body>
+    <header>
+      <div >
+       <a href="https://wolt.com/sr/srb"><img src="img/reklama.png" id="reklama" alt="glovo"></a> 
+      </div>
+    </header>
+    <nav>
+      <ul>
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="bioskop.html">BIOSKOP</a></li>
+          <li><a href="forma.html">NARUČI HRANU</a></li>
+          <li><a href="puzle.html">PUZLE</a></li>
+      </ul>
+  </nav>
+    <section>
+      <div class="omeni">
+        <h1>O MENI</h1>
+        <p>Miloš Đorđević, rođen 8.12.2002. taj dan bila zima. Živim u Bavaništu tu sam završio i osnovnu školu.
+          <br>U srednju školu sam išao u Pančevu , u Elektrotehničku školu "Nikola Tesla". Zadaci koje sam uradio na Višeru su:
+          <br>Prvi, drugi i treći zadatak iz PRJ na prvom kolokvijumu. Takođe prvi, drugi i treći zadatak na drugom kolokvijumu iz PRJ <br>
+          Uradio sam i zadatke iz SKI na vežbama <br>
+        </p>
+      </div>
+      <p id="quote"></p>
+
+<script>
+  var quotes = [
+    { text: "Gdje je tanko, tu se i kida."},
+    { text: "Čovjek bez slobode kao riba bez vode."},
+    { text: "Što ko posije, to i požnje."},
+    { text: "Bez muke nema nauke."},
+    { text: "Ko rano rani, dvije sreće grabi."}
+  ];
+
+  var currentIndex = 0;
+  var quoteElem = document.getElementById("quote");
+
+  function updateQuote() {
+    quoteElem.innerHTML = quotes[currentIndex].text;
+    currentIndex++;
+    if (currentIndex >= quotes.length) {
+      currentIndex = 0;
+    }
+  }
+  updateQuote();
+  setInterval(updateQuote, 10000);
+
+</script>
+    <footer>
+      <div id="kopirajt">
+        <i>&copy 2023 Miloš Đorđević, sva prava zadržana.</i></div>
+    </footer>
+   
+  </body>
+</html>
+
